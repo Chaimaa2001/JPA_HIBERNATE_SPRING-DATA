@@ -3,6 +3,7 @@ package ma.emsi.compte_rendu2;
 import ma.emsi.compte_rendu2.entities.*;
 import ma.emsi.compte_rendu2.repository.*;
 import ma.emsi.compte_rendu2.service.IHospitalService;
+import ma.emsi.compte_rendu2.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -22,43 +23,43 @@ public class CompteRendu2Application  {
     }
 
    @Bean
-    CommandLineRunner start(IHospitalService hospitalService,PatientRepository patientRepository,RendezVousRepository rendezVousRepository,ConsultationRepository consultationRepository,MedecinRepository medecinRepository)
+    CommandLineRunner start(UserServiceImpl userService)
    {
-       return args -> {
-           Stream.of("Mohamed","Hassan","Najat")
-                   .forEach(name->{
-                       Patient patient=new Patient();
-                       patient.setNom(name);
-                       patient.setDateNaissance(new Date());
-                       patient.setMalade(false);
-                       hospitalService.savePatient(patient);});
-           Stream.of("aymane","hanane","yassmine")
-                   .forEach(name->{
-                       Medecin medecin=new Medecin();
-                       medecin.setNom(name);
-                       medecin.setEmail(name+"@gmail.com");
-                       medecin.setSpécialité(Math.random()>0.5?"Cardio":"Dentiste");
-                       hospitalService.saveMedecin(medecin);
-                   });
 
-           Patient patient=patientRepository.findById(1L).orElse(null);
-           Patient patient1=patientRepository.findByNom("Mohamed");
-           Medecin medecin=medecinRepository.findByNom("yassmine");
-           RendezVous rendezVous=new RendezVous();
-           rendezVous.setDate(new Date());
-           rendezVous.setStatus(StatusRDV.PENDING);
-           rendezVous.setPatient(patient);
-           rendezVous.setMedecin(medecin);
-           hospitalService.saveRDV(rendezVous);
+        return args -> {
+            User u=new User();
+            u.setUserName("user1");
+            u.setPassword("123456");
+            userService.addNewUser(u);
 
-           RendezVous rendezVous1=rendezVousRepository.findAll().get(0);
-           Consultation consultation=new Consultation();
-           consultation.setDateConsultation(new Date());
-           consultation.setRendezVous(rendezVous1);
-           consultation.setRapport("Rapport de la consultation");
-          hospitalService.saveConsultation(consultation);
+            User u2=new User();
+            u2.setUserName("admin");
+            u2.setPassword("123456");
+            userService.addNewUser(u2);
+            Stream.of("STUDENT","USER","ADMIN").forEach(
+                    r->{
+                        Role role1=new Role();
+                        role1.setRoleName(r);
+                        userService.addNewRole(role1);
+                    }
+            );
+            userService.addRoleToUser("user1","STUDENT");
+            userService.addRoleToUser("user1","USER");
+            userService.addRoleToUser("admin","USER");
+            userService.addRoleToUser("admin","ADMIN");
 
-
+            try{
+                User user=userService.authenticate("user1","123456");
+                System.out.println(user.getUserId());
+                System.out.println(user.getUserName());
+                System.out.println("Roles=>");
+                user.getRoles().forEach(r->{
+                    System.out.println("ROLE=>"+r.toString());
+                });
+            }catch(Exception exception)
+            {
+                exception.printStackTrace();
+            }
 
        };
 
