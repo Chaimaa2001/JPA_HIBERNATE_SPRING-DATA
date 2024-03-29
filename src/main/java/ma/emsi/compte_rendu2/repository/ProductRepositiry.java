@@ -17,4 +17,5 @@ public interface ProductRepositiry extends JpaRepository<Product,Long> {
     List<Product>searchByPrice(@Param("x") double price);
 
 
+
 }

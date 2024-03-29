@@ -20,13 +20,16 @@ public class CompteRendu2Application implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        //AJOUTER DES PRODUITS
         productRepository.save(new Product(null,"Computer",4300,3));
         productRepository.save(new Product(null,"Printer",1200,4));
         productRepository.save(new Product(null,"Smart Phone",3200,32));
+        //CONSULTER TOUS LES PRODUITS
         List<Product> products= productRepository.findAll();
         products.forEach(p->{
             System.out.println(p.toString());
         });
+        //CONSULTER UN PRODUIT AVEC SON ID
         Product product=productRepository.findById(Long.valueOf(1)).get();
         System.out.println("-----------------------------");
         System.out.println(product.getId());
@@ -34,6 +37,7 @@ public class CompteRendu2Application implements CommandLineRunner {
         System.out.println(product.getPrice());
         System.out.println(product.getQuatity());
         System.out.println("--------------------------------");
+        //CHERCHER UN PRODUIT
         List<Product>productList=productRepository.findByNameContains("C");
         productList.forEach(p->{
             System.out.println(p);
@@ -53,6 +57,29 @@ public class CompteRendu2Application implements CommandLineRunner {
         productList4.forEach(p->{
             System.out.println(p);
         });
+        //MODIFIER UN PRODUIT
+        Product product1=productRepository.findById(Long.valueOf(1)).get();
+        product1.setQuatity(20);
+        product1.setName("IPHONE");
+        product1.setPrice(50000);
+        productRepository.save(product1);
+        //CONSULTER UN PRODUIT AVEC SON ID
+        System.out.println("------------------APRES MODIFICATION--------------------------------------");
+        List<Product> products2= productRepository.findAll();
+        products2.forEach(p->{
+            System.out.println(p.toString());
+        });
+        //SUPPRIMER UN PRODUIT PAR ID
+        Product product2=productRepository.findById(Long.valueOf(1)).get();
+        productRepository.delete(product2);
+        System.out.println("------------------APRES MODIFICATION--------------------------------------");
+        List<Product> products3= productRepository.findAll();
+        products3.forEach(p->{
+            System.out.println(p.toString());
+        });
+
+
+
 
 
     }
