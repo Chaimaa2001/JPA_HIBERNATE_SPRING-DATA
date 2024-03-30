@@ -1,6 +1,6 @@
 <h4>2-CREATION DU PROJET AVEC LES DEPENDANCE JPA ,H2 ,SPRING WEB ET LOMBOK </h4>
-<img src="C:\Users\CHAIMAA\Desktop\JEE\COMPTE_RENDU2\captures\QUESTION2.png"/>
-<img src="C:\Users\CHAIMAA\Desktop\JEE\COMPTE_RENDU2\captures\QUESTION2-1.png"/>
+<img src="captures\QUESTION2.png"/>
+<img src="captures\QUESTION2-1.png"/>
 <h4>3-L'entité JPA PRODUCT</h4>
 <img src="C:\Users\CHAIMAA\Desktop\JEE\COMPTE_RENDU2\captures\QUESTION3.png"/>
 <h4>4-Unité de persistance application.properties</h4>
