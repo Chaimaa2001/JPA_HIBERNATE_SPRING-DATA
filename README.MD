@@ -32,5 +32,23 @@
 <h5>6-6-Supprimer un produit</h5>
 <img src="captures\QUESTION6-6.png"/>
 <h4>Resultat</h4>
+<img src="C:\Users\CHAIMAA\Desktop\JEE\COMPTE_RENDU2\captures\RESULAT6.png"/>
+<h4>7-MIGRER DE H2 VERS SQL</h4>
+<img src="C:\Users\CHAIMAA\Desktop\JEE\COMPTE_RENDU2\captures\img.png">
+<h4>8-PATIENT CONSULATION MEDECIN RENDEZ-VOUS </h4>
+<img src="C:\Users\CHAIMAA\Desktop\JEE\COMPTE_RENDU2\captures\img8.png">
+<img src="C:\Users\CHAIMAA\Desktop\JEE\COMPTE_RENDU2\captures\img8-1.png">
+<img src="C:\Users\CHAIMAA\Desktop\JEE\COMPTE_RENDU2\captures\img8-2.png">
+<img src="C:\Users\CHAIMAA\Desktop\JEE\COMPTE_RENDU2\captures\img8-3.png">
+<img src="C:\Users\CHAIMAA\Desktop\JEE\COMPTE_RENDU2\captures\img8-4.png">
+<img src="C:\Users\CHAIMAA\Desktop\JEE\COMPTE_RENDU2\captures\img8-5.png">
+<img src="C:\Users\CHAIMAA\Desktop\JEE\COMPTE_RENDU2\captures\img8-6.png">
+<img src="C:\Users\CHAIMAA\Desktop\JEE\COMPTE_RENDU2\captures\img8-7.png">
+<h4>9-ROLE ET USER (RELATION MANY TO MANY)</h4>
+<img src="C:\Users\CHAIMAA\Desktop\JEE\COMPTE_RENDU2\captures\img9.png">
+<img src="C:\Users\CHAIMAA\Desktop\JEE\COMPTE_RENDU2\captures\img9-1.png">
+<img src="C:\Users\CHAIMAA\Desktop\JEE\COMPTE_RENDU2\captures\img9-2.png">
+<img src="C:\Users\CHAIMAA\Desktop\JEE\COMPTE_RENDU2\captures\img9-3.pngg">
 <img src="captures\RESULAT6.png"/>
+
 
