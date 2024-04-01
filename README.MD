@@ -48,7 +48,7 @@
 <img src="captures\img9.png">
 <img src="captures\img9-1.png">
 <img src="captures\img9-2.png">
-<img src="captures\img9-3.pngg">
+<img src="captures\img9-3.png">
 
 
 
